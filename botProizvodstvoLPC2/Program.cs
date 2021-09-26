@@ -58,9 +58,13 @@ namespace botProizvodstvoLPC2
             Console.WriteLine("Запрос к БД с данными по производству на сегодня ");
             Console.WriteLine("Содержит ссылки по рулонно(ссылка это сообщения при прокатке)");
 
-            txtRulon = "1,2,3,4,5,";
+            for (int i = 0; i < 3; i++)
+            {
+                var ProizvodRulon = await client.SendTextMessageAsync(msg.Chat.Id, i.ToString());
+                //var ProizvodRulon = await client.SendTextMessageAsync(msg.Chat.Id, txtRulon, replyMarkup: returnMenu());
+            }
 
-            var ProizvodRulon = await client.SendTextMessageAsync(msg.Chat.Id, txtRulon, replyMarkup: returnMenu());
+            
         }
 
         private static IReplyMarkup returnMenu()
