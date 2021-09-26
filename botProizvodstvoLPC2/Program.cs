@@ -20,6 +20,7 @@ namespace botProizvodstvoLPC2
             var me = client.GetMeAsync().Result;
             Console.WriteLine($"Username {me.FirstName}({me.Username}) c ID {me.Id}");
 
+
              
             client.StartReceiving();
             client.OnMessage += onMessageHandler;
